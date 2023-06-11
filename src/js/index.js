@@ -1,21 +1,47 @@
-//import './css/styles.css';
-const refs = {
-    searchForm: document.querySelector('.breed-select'),
-    articlesContainer: document.querySelector('.cat-info'),
-};
-refs.searchForm.addEventListener('click', onSearch);
-function onSearch(e) {
-    e.preventDefault();
+import SlimSelect from 'slim-select';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+const url = `https://api.thecatapi.com/v1/breeds`;
+const api_key = "live_8tpZg11OtSAVj1x4e7Xsgrtcx0d6GFYVaOUgrdFXq3fwB3BvcWUUBzK33KIQ8PCa"
+let storedBreeds = []
 
-    const form = e.currentTarget.elements.query.value;
+fetch(url, {
+    headers: {
+        'x-api-key': api_key
+    }
+})
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
 
-    const options = {
-        headers: {
-            Autorization: 'live_8tpZg11OtSAVj1x4e7Xsgrtcx0d6GFYVaOUgrdFXq3fwB3BvcWUUBzK33KIQ8PCa'
+        data = data.filter(img => img.image?.url != null)
+
+        storedBreeds = data;
+
+        for (let i = 0; i < storedBreeds.length; i++) {
+            const breed = storedBreeds[i];
+            let option = document.createElement('option');
+
+            if (!breed.image) continue
+
+            option.value = i;
+            option.innerHTML = `${breed.name}`;
+            document.getElementById('breed_selector').appendChild(option);
+
         }
-    };
-    const url = 'https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng'
-    fetch(url, options)
-        .then(response => response.json())
-        .then(console.log)
+        showBreedImage(0)
+    })
+    .catch(function (error) {
+        console.log(Notify.error);
+    });
+function showBreedImage(index) {
+    document.getElementById("breed_image").src = storedBreeds[index].image.url;
+
+    document.getElementById("breed_json").textContent = storedBreeds[index].temperament
+
+    document.getElementById("wiki_link").hrf = storedBreeds[index].wikipedia_url
+    document.getElementById("wiki_link").innerHTML = storedBreeds[index].wikipedia_url
 }
+new SlimSelect({
+    select: '#selectElement'
+})
