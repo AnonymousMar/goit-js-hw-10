@@ -1,2 +1,0 @@
-({searchForm:document.querySelector(".breed-select"),articlesContainer:document.querySelector(".cat-info")}).searchForm.addEventListener("click",(function(e){e.preventDefault();e.currentTarget.elements.query.value;fetch("https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng",{headers:{Autorization:"live_8tpZg11OtSAVj1x4e7Xsgrtcx0d6GFYVaOUgrdFXq3fwB3BvcWUUBzK33KIQ8PCa"}}).then((e=>e.json())).then(console.log)}));
-//# sourceMappingURL=index.b90ff535.js.map
