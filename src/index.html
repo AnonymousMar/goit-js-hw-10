@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
-      <select id="breed_selector"  name="breed_selector"></select>
+      <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector"  target="_blank"></select>
     <span class="loader"></span>
-    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
+    
     <div>
       <a id="wiki_link" target="_blank"></a>
       <div id="breed_json"></div>
     </div>
+    
     <div>
       <img id="breed_image"></img>
     </div>
