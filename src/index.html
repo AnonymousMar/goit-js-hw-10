@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
-      <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector"  target="_blank"></select>
+      <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
+      </select>
+      
     <span class="loader"></span>
     
     <div>
       <a id="wiki_link" target="_blank"></a>
       <div id="breed_json"></div>
     </div>
-    
+
     <div>
       <img id="breed_image"></img>
     </div>
