@@ -1,0 +1,2 @@
+!async function(){const e=await fetch(" https://api.thecatapi.com/v1/breeds?api_key=live_8tpZg11OtSAVj1x4e7Xsgrtcx0d6GFYVaOUgrdFXq3fwB3BvcWUUBzK33KIQ8PCa"),t=await e.json();var n;n=t.message,document.getElementById("breed").innerHTML=`\n  <select onchange="fetchCatByBreed(this.value) class="breed-select"">\n        ${Object.keys(n).map((function(e){return`<option> ${e} </option>`})).join("")}\n      </select>\n  `}();
+//# sourceMappingURL=index.7b54aab4.js.map
