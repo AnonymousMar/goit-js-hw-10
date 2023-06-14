@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 10</title>
-    <script src="/src/js/index.js" type="module"></script>
-    <link rel="stylesheet" href="css/index.css">
-  </head>
-  <body>
-      <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
-      </select>
-      
-    <span class="loader"></span>
-    
-    <div>
-      <a id="wiki_link" target="_blank"></a>
-      <div id="breed_json"></div>
-    </div>
 
-    <div>
-      <img id="breed_image"></img>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework 10</title>
+  <script src="/src/js/index.js" type="module"></script>
+</head>
+<body>
+  <div id="breed">
+<p class="loader">Loading data, please wait...</p>
+<p class="error">Oops! Something went wrong! Try reloading the page!</p>
+  </div>
+  
+  <div class="cat-info"></div>
+
+</body>
+
 </html>
