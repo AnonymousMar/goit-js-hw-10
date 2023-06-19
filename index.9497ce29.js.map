@@ -1,1 +1,0 @@
-{"mappings":"AAEoBA,SAASC,cAAc","sources":["src/js/index.js"],"sourcesContent":["import { fetchBreeds, fetchCatByBreed } from './cat-api.js';\n\nconst breedSelect = document.querySelector('.breed-select');"],"names":["document","querySelector"],"version":3,"file":"index.9497ce29.js.map"}
