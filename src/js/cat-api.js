@@ -1,5 +1,4 @@
-   const API_KEY =
-      'live_8tpZg11OtSAVj1x4e7Xsgrtcx0d6GFYVaOUgrdFXq3fwB3BvcWUUBzK33KIQ8PCa';
+   const API_KEY = 'live_8tpZg11OtSAVj1x4e7Xsgrtcx0d6GFYVaOUgrdFXq3fwB3BvcWUUBzK33KIQ8PCa';
 
     export async function fetchBreeds() {
         try {
