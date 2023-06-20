@@ -1,21 +1,33 @@
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
+.error {
+    display: none;
+    font-size: 22px;
+    color: #ff3d00;
 }
 
 .loader {
-    display: none;
-    border: 8px solid #f3f3f3;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    border-top: 8px solid #3498db;
-    width: 40px;
-    height: 40px;
-    animation: spin 2s linear infinite;
-    margin: 20px auto;
+    display: inline-block;
+    position: relative;
+    border: 2px solid #ff3d00;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
 
-@keyframes spin {
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    border: 2px solid #000;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+@keyframes rotation {
     0% {
         transform: rotate(0deg);
     }
@@ -25,28 +37,21 @@
     }
 }
 
-.error {
-    display: none;
-    color: red;
-}
-
-.cat-info {
-    display: none;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.cat-image {
-    width: 200px;
-    height: auto;
-    margin-bottom: 10px;
+img {
+    max-width: 800px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
 }
 
 .breed-select {
-    margin-bottom: 20px;
-    width: 100%;
+    margin-bottom: 30px;
 }
 
-h1 {
-    text-align: center;
+p {
+    max-width: 800px;
+}
+
+.cat-info {
+    display: flex;
 }
